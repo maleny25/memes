@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Memes</title>
+  </head>
+  <body>
+    <h1>Meme Producer</h1>
+    <p>{{greeting}} my {{adjective}} memers
+      <br>
+      Get ready to create your own memes!
+    </p>
+    <img src="https://media0.giphy.com/media/l3vRanT6pqZGIZNqo/giphy.gif?cid=790b76115d373c0c59374d2e41f9ece3&rid=giphy.gif" alt"">
+
+    <br>
+
+
+      <form action="/meme" method="post">
+        <input type="checkbox" name="dark_mode" value="True">Dark Mode</input>
+        <br>
+        Type in the first line of code:
+        <br>
+        <input type="text" name="line_one" value="First line of text">
+        <br>
+        Type in the first line of code:
+        <br>
+        <input type="text" name="line_two" value="Second line of text">
+        <br>
+        Select your meme:
+        <br>
+        <select name="meme_pic">
+          {% for key, value in meme_imgs.iteritems() %}
+            <option value="{{key}}">{{value["name"]}}</option>
+          {% endfor %}
+
+        </select>
+        <br>
+        <input type="submit" value="Generate meme!">
+
+      </form>
+
+
+
+  </body>
+</html>

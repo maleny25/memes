@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Meme Result</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+
+    <h1>Memes</h1>
+        <div id="meme-div" style="background-image:url({{img_url}});">
+          <h2 id="line1" class={%if dark_mode == True%}"dark_mode"{% else %}""{% endif %}>{{line1}}</h2>
+          <h2 id="line2" class={%if dark_mode == True%}"dark_mode"{% else %}""{% endif %}>{{line2}}</h2>
+        </div>
+      <br>
+      <h1>All Memes</h1>
+      {% for meme in all_memes %}
+      <div id="meme-div" style="background-image:url({{meme.image_url}});">
+        <h2 id="line1" class={%if meme.dark_mode == True%}"dark_mode"{% else %}""{% endif %}>{{meme.line1}}</h2>
+        <h2 id="line2" class={%if meme.dark_mode == True%}"dark_mode"{% else %}""{% endif %}>{{meme.line2}}</h2>
+      </div>
+      <br>
+      {% endfor %}
+
+  </body>
+</html>
+<!-- https://confessionsofabookgeek.files.wordpress.com/2014/11/fast-reading-gif.gif?w=282&zoom=2 -->
